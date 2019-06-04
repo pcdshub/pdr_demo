@@ -83,7 +83,7 @@ class Laptop(Device):
 
 
 laptop_md = happi.Device(prefix='Empty', name='teddy_laptop',
-                         beamline='TST', args=[],
+                         beamline='TST', args=[], kwargs={'name': '{{name}}'},
                          device_class='laptop.Laptop')
 
 lp = happi.from_container(laptop_md)
