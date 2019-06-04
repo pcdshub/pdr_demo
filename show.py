@@ -2,11 +2,13 @@ import os.path
 
 from qtpy.QtWidgets import QApplication
 from typhon import TyphonSuite, use_stylesheet
+from ophyd.status import wait as status_wait
 
 from laptop import lp
 
 # Initialize signals
-lp.trigger()
+status_wait(lp.trigger())
+
 # Create application
 app = QApplication([])
 use_stylesheet()
